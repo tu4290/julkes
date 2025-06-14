@@ -1,0 +1,151 @@
+# Uber Elite Database MCP Requirements
+# AI/ML Framework Dependencies discovered through Context7 integration
+
+# Core AI/ML Frameworks
+pydantic-ai>=0.0.13          # Agent-based architecture and tool registration
+torch>=2.0.0                 # PyTorch for neural networks and deep learning
+torchvision>=0.15.0          # Computer vision utilities
+torchaudio>=2.0.0            # Audio processing utilities
+jax[cuda]>=0.4.0             # JAX for high-performance computing with CUDA support
+jaxlib>=0.4.0                # JAX library dependencies
+tensorflow>=2.13.0           # TensorFlow for legacy model support
+tensorflow-probability>=0.21.0  # Probabilistic modeling
+candle-core>=0.3.0           # Rust ML framework for high-performance inference
+
+# Enhanced Database and Async Support
+aiosqlite>=0.19.0            # Async SQLite support
+sqlalchemy[asyncio]>=2.0.0   # Async SQLAlchemy ORM
+alembic>=1.12.0              # Database migrations
+psycopg2-binary>=2.9.0       # PostgreSQL adapter (optional)
+
+# Data Processing and Analysis
+pandas>=2.0.0                # Data manipulation and analysis
+numpy>=1.24.0                # Numerical computing
+scipy>=1.11.0                # Scientific computing
+scikit-learn>=1.3.0          # Machine learning utilities
+statsmodels>=0.14.0          # Statistical modeling
+
+# Pydantic and Validation
+pydantic>=2.0.0              # Data validation and settings management
+pydantic-settings>=2.0.0     # Settings management
+
+# Visualization and UI (existing Elite Options System)
+plotly>=5.15.0               # Interactive plotting
+dash>=2.10.0                 # Web application framework
+dash-bootstrap-components>=1.4.0  # Bootstrap components for Dash
+
+# Performance and Optimization
+numba>=0.58.0                # JIT compilation for Python
+cython>=3.0.0                # C extensions for Python
+psutil>=5.9.0                # System and process utilities
+memory-profiler>=0.61.0      # Memory usage profiling
+
+# Async and Concurrency
+aiohttp>=3.8.0               # Async HTTP client/server
+aiofiles>=23.0.0             # Async file operations
+uvloop>=0.17.0               # Fast asyncio event loop (Unix only)
+
+# Model Serving and Deployment
+fastapi>=0.100.0             # Modern web framework for APIs
+uvicorn[standard]>=0.23.0    # ASGI server
+gunicorn>=21.0.0             # WSGI HTTP Server
+
+# Monitoring and Observability
+prometheus-client>=0.17.0    # Prometheus metrics
+structlog>=23.0.0            # Structured logging
+rich>=13.0.0                 # Rich text and beautiful formatting
+
+# Security and Authentication
+cryptography>=41.0.0         # Cryptographic recipes and primitives
+pyjwt>=2.8.0                 # JSON Web Token implementation
+passlib[bcrypt]>=1.7.0       # Password hashing library
+
+# Configuration and Environment
+python-dotenv>=1.0.0         # Load environment variables from .env
+pyyaml>=6.0.0                # YAML parser and emitter
+toml>=0.10.0                 # TOML parser
+
+# Testing and Development
+pytest>=7.4.0                # Testing framework
+pytest-asyncio>=0.21.0       # Async testing support
+pytest-cov>=4.1.0            # Coverage plugin
+black>=23.0.0                # Code formatter
+isort>=5.12.0                # Import sorter
+flake8>=6.0.0                # Linting
+mypy>=1.5.0                  # Static type checking
+
+# Model Explainability and Interpretability
+shap>=0.42.0                 # SHapley Additive exPlanations
+lime>=0.2.0                  # Local Interpretable Model-agnostic Explanations
+captum>=0.6.0                # Model interpretability for PyTorch
+
+# Time Series and Financial Analysis
+arch>=6.2.0                  # ARCH and GARCH models
+yfinance>=0.2.0              # Yahoo Finance data
+quandl>=3.7.0                # Financial and economic data
+ta-lib>=0.4.0                # Technical analysis library
+
+# Natural Language Processing (for sentiment analysis)
+transformers>=4.30.0         # Hugging Face transformers
+tokenizers>=0.13.0           # Fast tokenizers
+sentence-transformers>=2.2.0 # Sentence embeddings
+nltk>=3.8.0                  # Natural language toolkit
+spacy>=3.6.0                 # Industrial-strength NLP
+
+# GPU Acceleration and CUDA Support
+cupy-cuda12x>=12.0.0         # NumPy-like library for GPU (CUDA 12.x)
+cudatoolkit>=11.8.0          # CUDA toolkit (conda install recommended)
+
+# Distributed Computing (for scaling)
+ray[default]>=2.6.0          # Distributed computing framework
+dask[complete]>=2023.7.0     # Parallel computing library
+
+# Model Versioning and Experiment Tracking
+mlflow>=2.5.0                # ML lifecycle management
+wandb>=0.15.0                # Weights & Biases experiment tracking
+dvc>=3.0.0                   # Data version control
+
+# Additional Utilities
+tqdm>=4.65.0                 # Progress bars
+click>=8.1.0                 # Command line interface creation
+requests>=2.31.0             # HTTP library
+httpx>=0.24.0                # Async HTTP client
+websockets>=11.0.0           # WebSocket implementation
+redis>=4.6.0                 # Redis client
+celery>=5.3.0                # Distributed task queue
+
+# Development and Debugging
+ipython>=8.14.0              # Enhanced interactive Python shell
+jupyter>=1.0.0               # Jupyter notebook
+notebook>=7.0.0              # Jupyter notebook server
+ipdb>=0.13.0                 # IPython debugger
+line-profiler>=4.0.0         # Line-by-line profiling
+
+# Documentation
+sphinx>=7.1.0                # Documentation generator
+sphinx-rtd-theme>=1.3.0      # Read the Docs theme
+mkdocs>=1.5.0                # Markdown documentation
+mkdocs-material>=9.1.0       # Material theme for MkDocs
+
+# Platform-specific dependencies
+# Windows
+win32-setctime>=1.1.0; sys_platform == "win32"  # Windows file time setting
+colorama>=0.4.6; sys_platform == "win32"         # Colored terminal output on Windows
+
+# Note: Some packages may require specific installation procedures:
+# 1. CUDA toolkit should be installed separately for GPU support
+# 2. TA-Lib requires separate C library installation
+# 3. Some packages may need conda instead of pip for optimal performance
+# 4. Candle (Rust ML) may require Rust toolchain for compilation
+
+# Installation commands:
+# pip install -r requirements_uber_elite.txt
+# 
+# For CUDA support (if using NVIDIA GPUs):
+# conda install cudatoolkit=11.8 -c conda-forge
+# 
+# For TA-Lib (technical analysis):
+# conda install -c conda-forge ta-lib
+# 
+# For optimal JAX performance:
+# pip install jax[cuda12_pip] -f https://storage.googleapis.com/jax-releases/jax_cuda_releases.html

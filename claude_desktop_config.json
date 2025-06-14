@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "elite-options-database": {
+      "command": "node",
+      "args": [
+        "c:\\Users\\dangt\\OneDrive\\Desktop\\elite_options_system_v2_5(julkess)\\mcp-database-server\\dist\\src\\index.js",
+        "c:\\Users\\dangt\\OneDrive\\Desktop\\elite_options_system_v2_5(julkess)\\data\\elite_options.db"
+      ],
+      "env": {
+        "NODE_ENV": "development"
+      }
+    }
+  }
+}

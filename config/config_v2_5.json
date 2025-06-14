@@ -1,0 +1,355 @@
+{
+    "system_settings": {
+        "project_root_override": null,
+        "logging_level": "INFO",
+        "log_to_file": true,
+        "log_file_path": "logs/eots_v2_5.log",
+        "max_log_file_size_bytes": 10485760,
+        "backup_log_count": 5,
+        "live_mode": true,
+        "fail_fast_on_errors": true,
+        "metrics_for_dynamic_threshold_distribution_tracking": [
+            "GIB_OI_based_Und",
+            "VAPI_FA_Z_Score_Und",
+            "DWFD_Z_Score_Und",
+            "TW_LAF_Z_Score_Und"
+        ],
+        "signal_activation": {"EnableAllSignals": true}
+    },
+    "data_fetcher_settings": {
+        "api_keys": {
+        },
+        "retry_attempts": 3,
+        "retry_delay": 5.0,
+        "timeout": 30.0,
+        "convexvalue_auth": {
+            "use_env_variables": true,
+            "auth_method": "email_password"
+        },
+        "tradier_api_key": "${TRADIER_PRODUCTION_TOKEN}",
+        "tradier_account_id": "VA41982990"
+    },
+    "data_management_settings": {
+        "cache_directory": "data_cache_v2_5",
+        "data_store_directory": "data_cache_v2_5/data_store",
+        "cache_expiry_hours": 24.0
+    },
+    "database_settings": {
+        "host": "${DB_HOST}",
+        "port": 5432,
+        "database": "${DB_NAME}",
+        "user": "${DB_USER}",
+        "password": "${DB_PASSWORD}",
+        "min_connections": 1,
+        "max_connections": 10
+    },
+    "data_processor_settings": {
+        "factors": {
+            "volume_factor": 1.0,
+            "price_factor": 1.0,
+            "volatility_factor": 1.0
+        },
+        "coefficients": {
+            "dag_alpha": {},
+            "tdpi_beta": {},
+            "vri_gamma": {}
+        },
+        "iv_context_parameters": {
+            "iv_threshold": 0.25,
+            "iv_lookback_days": 30
+        }
+    },
+    "strategy_settings": {
+        "strike_col_name": "strike",
+        "underlying_price_col_name": "underlying_price",
+        "expiration_col_name": "expiration_date",
+        "dte_col_name": "dte",
+        "option_type_col_name": "opt_kind",
+        "targets": {
+            "profit_target_percentage": 50.0,
+            "stop_loss_percentage": 25.0
+        },
+        "risk_management": {
+            "max_position_size": 10000.0,
+            "max_daily_loss": 2000.0
+        },
+        "multipliers": {
+            "bullish_multiplier": 1.2,
+            "bearish_multiplier": 0.8
+        }
+    },
+    "adaptive_metric_parameters": {
+        "a_dag_settings": {},
+        "e_sdag_settings": {},
+        "d_tdpi_settings": {},
+        "vri_2_0_settings": {},
+        "enhanced_heatmap_settings": {}
+    },
+    "enhanced_flow_metric_settings": {
+        "vapi_fa_params": {
+            "flow_threshold": 0.5,
+            "flow_window": 10,
+            "smoothing_factor": 0.3,
+            "volume_weight": 0.4,
+            "premium_weight": 0.6,
+            "acceleration_lookback": 5
+        },
+        "acceleration_calculation_intervals": ["5", "10", "15"],
+        "dwfd_params": {
+            "flow_threshold": 0.5,
+            "flow_window": 10,
+            "smoothing_factor": 0.3,
+            "delta_weight_factor": 1.2,
+            "divergence_sensitivity": 1.5
+        },
+        "tw_laf_params": {
+            "flow_threshold": 0.5,
+            "flow_window": 10,
+            "smoothing_factor": 0.3,
+            "time_weight_decay": 0.95,
+            "liquidity_adjustment": 0.8
+        },
+        "z_score_window": 20,
+        "time_intervals": [5, 15, 30],
+        "liquidity_weight": 0.3,
+        "divergence_threshold": 1.5,
+        "lookback_periods": [5, 10, 20]
+    },
+    "adaptive_trade_idea_framework_settings": {
+        "min_conviction_to_initiate_trade": 2.5,
+        "signal_integration_params": {},
+        "conviction_mapping_params": {},
+        "strategy_specificity_rules": [],
+        "intelligent_recommendation_management_rules": {},
+        "learning_params": {
+            "performance_tracker_query_lookback": 90,
+            "learning_rate_for_signal_weights": 0.05,
+            "learning_rate_for_target_adjustments": 0.02,
+            "min_trades_for_statistical_significance": 20
+        }
+    },
+    "ticker_context_analyzer_settings": {
+        "lookback_days": 252,
+        "correlation_window": 60,
+        "volatility_windows": [1, 5, 20],
+        "volume_threshold": 1000000,
+        "use_yahoo_finance": false,
+        "yahoo_finance_rate_limit_seconds": 2.0,
+        "SPY": {},
+        "DEFAULT_TICKER_PROFILE": {}
+    },
+    "key_level_identifier_settings": {
+        "lookback_periods": 20,
+        "min_touches": 2,
+        "level_tolerance": 0.005,
+        "volume_threshold": 1.5,
+        "oi_threshold": 1000,
+        "gamma_threshold": 0.1,
+        "nvp_support_quantile": 0.95,
+        "nvp_resistance_quantile": 0.95
+    },
+    "heatmap_generation_settings": {
+        "ugch_params": {
+            "gamma_exposure_threshold": 1000000,
+            "delta_exposure_threshold": 500000,
+            "vanna_exposure_threshold": 100000,
+            "charm_exposure_threshold": 50000,
+            "greek_weights": {
+                "norm_DXOI": 1.5,
+                "norm_GXOI": 2.0,
+                "norm_VXOI": 1.2,
+                "norm_TXOI": 0.8,
+                "norm_CHARM": 0.6,
+                "norm_VANNA": 1.0
+            }
+        },
+        "sgdhp_params": {
+            "proximity_sensitivity_param": 0.05
+        },
+        "flow_normalization_window": 100
+    },
+    "market_regime_engine_settings": {
+        "default_regime": "REGIME_UNCLEAR_OR_TRANSITIONING",
+        "regime_evaluation_order": [],
+        "regime_rules": {
+            "bull_market": {
+                "trend_threshold": 0.05,
+                "volatility_threshold": 0.15
+            },
+            "bear_market": {
+                "trend_threshold": -0.05,
+                "volatility_threshold": 0.25
+            },
+            "sideways_market": {
+                "trend_threshold": 0.02,
+                "volatility_threshold": 0.12
+            },
+            "high_volatility": {
+                "volatility_threshold": 0.3,
+                "duration_threshold_minutes": 30
+            }
+        }
+    },
+    "visualization_settings": {
+        "dashboard_refresh_interval_seconds": 30,
+        "max_table_rows_signals_insights": 100,
+        "dashboard": {
+            "host": "localhost",
+            "port": 8050,
+            "debug": false,
+            "auto_refresh_seconds": 30,
+            "timestamp_format": "%Y-%m-%d %H:%M:%S %Z",
+            "defaults": {
+                "symbol": "SPY",
+                "refresh_interval_seconds": 30,
+                "dte_min": 0,
+                "dte_max": 45,
+                "price_range_percent": 20
+            },
+            "modes_detail_config": {
+                "main": {
+                    "label": "Main Dashboard",
+                    "module_name": "main_dashboard_display_v2_5",
+                    "charts": ["regime_display", "flow_gauges", "gib_gauges", "recommendations_table"]
+                },
+                "flow": {
+                    "label": "Flow Analysis",
+                    "module_name": "flow_mode_display_v2_5",
+                    "charts": ["net_value_heatmap_viz", "net_cust_delta_flow_viz", "net_cust_gamma_flow_viz", "net_cust_vega_flow_viz"]
+                },
+                "structure": {
+                    "label": "Structure & Positioning",
+                    "module_name": "structure_mode_display_v2_5",
+                    "charts": ["mspi_components_viz"]
+                },
+                "timedecay": {
+                    "label": "Time Decay & Pinning",
+                    "module_name": "time_decay_mode_display_v2_5",
+                    "charts": ["tdpi_strike_viz", "vci_0dte_strike_viz"]
+                },
+                "advanced": {
+                    "label": "Advanced Flow",
+                    "module_name": "advanced_flow_mode_v2_5",
+                    "charts": ["vapi_gauge", "dwfd_gauge", "tw_laf_gauge"]
+                }
+            },
+            "main_dashboard_settings": {
+                "regime_indicator": {
+                    "title": "Market Regime",
+                    "regime_colors": {
+                        "BULLISH": "success",
+                        "BEARISH": "danger",
+                        "NEUTRAL": "secondary",
+                        "VOLATILE": "warning",
+                        "default": "secondary"
+                    }
+                },
+                "flow_gauge": {
+                    "height": 200,
+                    "indicator_font_size": 16,
+                    "number_font_size": 24,
+                    "axis_range": [-3, 3],
+                    "steps": [
+                        {"range": [-3, -2], "color": "#d62728"},
+                        {"range": [-2, -0.5], "color": "#ff9896"},
+                        {"range": [-0.5, 0.5], "color": "#aec7e8"},
+                        {"range": [0.5, 2], "color": "#98df8a"},
+                        {"range": [2, 3], "color": "#2ca02c"}
+                    ],
+                    "threshold_line_color": "white",
+                    "margin": {"t": 60, "b": 40, "l": 20, "r": 20}
+                },
+                "gib_gauge": {
+                    "height": 180,
+                    "indicator_font_size": 14,
+                    "number_font_size": 20,
+                    "axis_range": [-50000, 50000],
+                    "dollar_axis_range": [-100000, 100000],
+                    "steps": [
+                        {"range": [-50000, -25000], "color": "#d62728"},
+                        {"range": [-25000, -5000], "color": "#ff9896"},
+                        {"range": [-5000, 5000], "color": "#aec7e8"},
+                        {"range": [5000, 25000], "color": "#98df8a"},
+                        {"range": [25000, 50000], "color": "#2ca02c"}
+                    ],
+                    "dollar_steps": [
+                        {"range": [-100000, -50000], "color": "#d62728"},
+                        {"range": [-50000, -10000], "color": "#ff9896"},
+                        {"range": [-10000, 10000], "color": "#aec7e8"},
+                        {"range": [10000, 50000], "color": "#98df8a"},
+                        {"range": [50000, 100000], "color": "#2ca02c"}
+                    ],
+                    "threshold_line_color": "white",
+                    "margin": {"t": 50, "b": 30, "l": 15, "r": 15}
+                },
+                "mini_heatmap": {
+                    "height": 150,
+                    "colorscale": "RdYlGn",
+                    "margin": {"t": 50, "b": 30, "l": 40, "r": 40}
+                },
+                "ticker_context": {
+                    "title": "Ticker Context"
+                },
+                "recommendations_table": {
+                    "title": "ATIF Recommendations",
+                    "max_rationale_length": 50,
+                    "page_size": 5,
+                    "style_cell": {
+                        "textAlign": "left",
+                        "padding": "5px",
+                        "minWidth": "80px",
+                        "width": "auto",
+                        "maxWidth": "200px"
+                    },
+                    "style_header": {
+                        "backgroundColor": "rgb(30, 30, 30)",
+                        "fontWeight": "bold",
+                        "color": "white"
+                    },
+                    "style_data": {
+                        "backgroundColor": "rgb(50, 50, 50)",
+                        "color": "white"
+                    }
+                }
+            }
+        }
+    },
+    "intraday_collector_settings": {
+        "watched_tickers": ["SPY", "SPX", "QQQ", "IWM", "VIX", "TSLA", "AMZN", "AAPL", "META", "MSFT", "NVDA"],
+        "metrics": [
+            "vapi_fa", "dwfd", "tw_laf",
+            "vapifa_zscore_history", "dwfd_zscore_history", "twlaf_zscore_history",
+            "rolling_flows", "nvp_by_strike", "nvp_vol_by_strike", "strikes",
+            "greek_flows", "flow_ratios"
+        ],
+        "cache_dir": "cache/intraday_metrics",
+        "collection_interval_seconds": 60,
+        "market_open_time": "09:30:00",
+        "market_close_time": "16:00:00",
+        "reset_at_eod": true
+    },
+    "symbol_specific_overrides": {
+        "SPY": {
+            "strategy_multiplier": 1.0,
+            "risk_adjustment": 1.0,
+            "custom_thresholds": {
+                "target_atr_stop_loss_multiplier": 1.5
+            }
+        }
+    },
+    "performance_tracker_settings_v2_5": {
+        "performance_data_directory": "data_cache_v2_5/performance_data_store",
+        "historical_window_days": 365,
+        "weight_smoothing_factor": 0.1,
+        "min_sample_size": 10,
+        "confidence_threshold": 0.75,
+        "update_interval_seconds": 3600
+    },
+    "time_of_day_definitions": {
+        "market_open": "09:30:00",
+        "market_close": "16:00:00",
+        "pre_market_start": "04:00:00",
+        "after_hours_end": "20:00:00",
+        "eod_pressure_calc_time": "15:00:00"
+    }
+}

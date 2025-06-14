@@ -1,0 +1,83 @@
+{
+  "test_timestamp": "2025-06-11T17:39:37.636898",
+  "total_execution_time": 1.0330328941345215,
+  "total_stages": 7,
+  "successful_stages": 5,
+  "failed_stages": 2,
+  "total_data_loss": 1000,
+  "stages": [
+    {
+      "name": "Environment Setup",
+      "success": true,
+      "processing_time": 0.0,
+      "data_count_in": 0,
+      "data_count_out": 1,
+      "data_loss": -1,
+      "error_message": null,
+      "validation_errors": []
+    },
+    {
+      "name": "Data Generation",
+      "success": true,
+      "processing_time": 0.0070438385009765625,
+      "data_count_in": 0,
+      "data_count_out": 501,
+      "data_loss": -501,
+      "error_message": null,
+      "validation_errors": []
+    },
+    {
+      "name": "Pydantic Validation",
+      "success": true,
+      "processing_time": 0.2648203372955322,
+      "data_count_in": 500,
+      "data_count_out": 500,
+      "data_loss": 0,
+      "error_message": null,
+      "validation_errors": [
+        "Config validation failed: 7 validation errors for EOTSConfigV2_5\nheatmap_generation_settings.resolution\n  Extra inputs are not permitted [type=extra_forbidden, input_value='medium', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.7/v/extra_forbidden\nheatmap_generation_settings.color_scheme\n  Extra inputs are not permitted [type=extra_forbidden, input_value='viridis', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.7/v/extra_forbidden\nheatmap_generation_settings.update_frequency_minutes\n  Extra inputs are not permitted [type=extra_forbidden, input_value=5, input_type=int]\n    For further information visit https://errors.pydantic.dev/2.7/v/extra_forbidden\nmarket_regime_engine_settings.regime_detection_method\n  Extra inputs are not permitted [type=extra_forbidden, input_value='threshold', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.7/v/extra_forbidden\nmarket_regime_engine_settings.regime_transition_smoothing\n  Extra inputs are not permitted [type=extra_forbidden, input_value=0.3, input_type=float]\n    For further information visit https://errors.pydantic.dev/2.7/v/extra_forbidden\nvisualization\n  Extra inputs are not permitted [type=extra_forbidden, input_value={'dashboard_refresh_inter...', 'color': 'white'}}}}}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.7/v/extra_forbidden\nperformance_tracker_settings\n  Extra inputs are not permitted [type=extra_forbidden, input_value={'tracking_enabled': True...interval_seconds': 3600}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.7/v/extra_forbidden",
+        "Market data validation failed: 2 validation errors for RawUnderlyingDataV2_5\nsymbol\n  Field required [type=missing, input_value={'price': 447.482979097143}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.7/v/missing\ntimestamp\n  Field required [type=missing, input_value={'price': 447.482979097143}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.7/v/missing"
+      ]
+    },
+    {
+      "name": "Data Management Layer",
+      "success": false,
+      "processing_time": 0.40488481521606445,
+      "data_count_in": 500,
+      "data_count_out": 0,
+      "data_loss": 500,
+      "error_message": "HistoricalDataManagerV2_5.__init__() missing 2 required positional arguments: 'config_manager' and 'db_manager'",
+      "validation_errors": []
+    },
+    {
+      "name": "Core Analytics Engine",
+      "success": false,
+      "processing_time": 0.001026153564453125,
+      "data_count_in": 500,
+      "data_count_out": 0,
+      "data_loss": 500,
+      "error_message": "MetricsCalculatorV2_5.__init__() missing 2 required positional arguments: 'config_manager' and 'historical_data_manager'",
+      "validation_errors": []
+    },
+    {
+      "name": "Dashboard Components",
+      "success": true,
+      "processing_time": 0.3512144088745117,
+      "data_count_in": 500,
+      "data_count_out": 500,
+      "data_loss": 0,
+      "error_message": null,
+      "validation_errors": []
+    },
+    {
+      "name": "End-to-End Flow",
+      "success": true,
+      "processing_time": 0.002537965774536133,
+      "data_count_in": 500,
+      "data_count_out": 500,
+      "data_loss": 0,
+      "error_message": null,
+      "validation_errors": []
+    }
+  ]
+}

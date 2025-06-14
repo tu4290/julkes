@@ -1,0 +1,117 @@
+{
+  "test_summary": {
+    "total_tests": 15,
+    "passed_tests": 9,
+    "success_rate": 60.0,
+    "overall_result": "FAILED",
+    "timestamp": "2025-06-11T15:40:07.786960"
+  },
+  "detailed_results": [
+    {
+      "test": "Dependencies Import",
+      "success": true,
+      "message": "All required packages available",
+      "timestamp": "2025-06-11T15:40:04.646803"
+    },
+    {
+      "test": "Environment File",
+      "success": true,
+      "message": ".env file found and loaded",
+      "timestamp": "2025-06-11T15:40:04.648119"
+    },
+    {
+      "test": "Config Loading",
+      "success": false,
+      "message": "Configuration loading failed",
+      "timestamp": "2025-06-11T15:40:05.046812",
+      "error": "Configuration validation failed: 21 validation errors for EOTSConfigV2_5\nadaptive_trade_idea_framework_settings\n  Field required [type=missing, input_value={'system_settings': {'pro...ss_multiplier': 1.5}}}}}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.8/v/missing\nticker_context_analyzer_settings.analysis_depth\n  Extra inputs are not permitted [type=extra_forbidden, input_value='medium', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.8/v/extra_forbidden\nticker_context_analyzer_settings.context_window_days\n  Extra inputs are not permitted [type=extra_forbidden, input_value=30, input_type=int]\n    For further information visit https://errors.pydantic.dev/2.8/v/extra_forbidden\nticker_context_analyzer_settings.correlation_threshold\n  Extra inputs are not permitted [type=extra_forbidden, input_value=0.5, input_type=float]\n    For further information visit https://errors.pydantic.dev/2.8/v/extra_forbidden\nticker_context_analyzer_settings.context_analysis\n  Extra inputs are not permitted [type=extra_forbidden, input_value={'depth': 'medium', 'wind...elation_threshold': 0.5}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.8/v/extra_forbidden\nticker_context_analyzer_settings.sector_analysis\n  Extra inputs are not permitted [type=extra_forbidden, input_value={'enable_sector_correlati...e, 'sector_weight': 0.3}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.8/v/extra_forbidden\nkey_level_identifier_settings.support_resistance_sensitivity\n  Extra inputs are not permitted [type=extra_forbidden, input_value=0.8, input_type=float]\n    For further information visit https://errors.pydantic.dev/2.8/v/extra_forbidden\nkey_level_identifier_settings.level_confirmation_touches\n  Extra inputs are not permitted [type=extra_forbidden, input_value=3, input_type=int]\n    For further information visit https://errors.pydantic.dev/2.8/v/extra_forbidden\nkey_level_identifier_settings.level_tolerance_percentage\n  Extra inputs are not permitted [type=extra_forbidden, input_value=0.5, input_type=float]\n    For further information visit https://errors.pydantic.dev/2.8/v/extra_forbidden\nkey_level_identifier_settings.level_detection\n  Extra inputs are not permitted [type=extra_forbidden, input_value={'sensitivity': 0.8, 'con...erance_percentage': 0.5}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.8/v/extra_forbidden\nkey_level_identifier_settings.support_resistance\n  Extra inputs are not permitted [type=extra_forbidden, input_value={'lookback_periods': [20,...trength_threshold': 0.7}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.8/v/extra_forbidden\nheatmap_generation_settings.resolution\n  Extra inputs are not permitted [type=extra_forbidden, input_value='medium', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.8/v/extra_forbidden\nheatmap_generation_settings.color_scheme\n  Extra inputs are not permitted [type=extra_forbidden, input_value='viridis', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.8/v/extra_forbidden\nheatmap_generation_settings.update_frequency_minutes\n  Extra inputs are not permitted [type=extra_forbidden, input_value=5, input_type=int]\n    For further information visit https://errors.pydantic.dev/2.8/v/extra_forbidden\nheatmap_generation_settings.enhanced_heatmap_params\n  Extra inputs are not permitted [type=extra_forbidden, input_value={'flow_normalization_wind...ime_decay_factor': 0.95}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.8/v/extra_forbidden\nmarket_regime_engine_settings.regime_detection_method\n  Extra inputs are not permitted [type=extra_forbidden, input_value='hybrid', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.8/v/extra_forbidden\nmarket_regime_engine_settings.regime_transition_smoothing\n  Extra inputs are not permitted [type=extra_forbidden, input_value=0.1, input_type=float]\n    For further information visit https://errors.pydantic.dev/2.8/v/extra_forbidden\nmarket_regime_engine_settings.regime_detection\n  Extra inputs are not permitted [type=extra_forbidden, input_value={'method': 'hybrid', 'loo...nsition_smoothing': 0.1}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.8/v/extra_forbidden\nmarket_regime_engine_settings.regime_thresholds\n  Extra inputs are not permitted [type=extra_forbidden, input_value={'bull_market': {'trend_t...threshold_minutes': 30}}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.8/v/extra_forbidden\n0dte_suite_settings\n  Extra inputs are not permitted [type=extra_forbidden, input_value={'base_coefficients': {'g...on': 1.2, 'close': 1.5}}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.8/v/extra_forbidden\nv2_5_enhanced_flow_signals\n  Extra inputs are not permitted [type=extra_forbidden, input_value={'signal_weights': {'vapi...OR_TRANSITIONING': 1.0}}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.8/v/extra_forbidden",
+      "traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\dangt\\OneDrive\\Desktop\\elite_options_system_v2_5(julkess)\\utils\\config_manager_v2_5.py\", line 102, in _load_config\n    self._config = EOTSConfigV2_5(**config_data)\n                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\dangt\\anaconda3\\envs\\options_env\\Lib\\site-packages\\pydantic\\main.py\", line 193, in __init__\n    self.__pydantic_validator__.validate_python(data, self_instance=self)\npydantic_core._pydantic_core.ValidationError: 21 validation errors for EOTSConfigV2_5\nadaptive_trade_idea_framework_settings\n  Field required [type=missing, input_value={'system_settings': {'pro...ss_multiplier': 1.5}}}}}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.8/v/missing\nticker_context_analyzer_settings.analysis_depth\n  Extra inputs are not permitted [type=extra_forbidden, input_value='medium', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.8/v/extra_forbidden\nticker_context_analyzer_settings.context_window_days\n  Extra inputs are not permitted [type=extra_forbidden, input_value=30, input_type=int]\n    For further information visit https://errors.pydantic.dev/2.8/v/extra_forbidden\nticker_context_analyzer_settings.correlation_threshold\n  Extra inputs are not permitted [type=extra_forbidden, input_value=0.5, input_type=float]\n    For further information visit https://errors.pydantic.dev/2.8/v/extra_forbidden\nticker_context_analyzer_settings.context_analysis\n  Extra inputs are not permitted [type=extra_forbidden, input_value={'depth': 'medium', 'wind...elation_threshold': 0.5}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.8/v/extra_forbidden\nticker_context_analyzer_settings.sector_analysis\n  Extra inputs are not permitted [type=extra_forbidden, input_value={'enable_sector_correlati...e, 'sector_weight': 0.3}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.8/v/extra_forbidden\nkey_level_identifier_settings.support_resistance_sensitivity\n  Extra inputs are not permitted [type=extra_forbidden, input_value=0.8, input_type=float]\n    For further information visit https://errors.pydantic.dev/2.8/v/extra_forbidden\nkey_level_identifier_settings.level_confirmation_touches\n  Extra inputs are not permitted [type=extra_forbidden, input_value=3, input_type=int]\n    For further information visit https://errors.pydantic.dev/2.8/v/extra_forbidden\nkey_level_identifier_settings.level_tolerance_percentage\n  Extra inputs are not permitted [type=extra_forbidden, input_value=0.5, input_type=float]\n    For further information visit https://errors.pydantic.dev/2.8/v/extra_forbidden\nkey_level_identifier_settings.level_detection\n  Extra inputs are not permitted [type=extra_forbidden, input_value={'sensitivity': 0.8, 'con...erance_percentage': 0.5}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.8/v/extra_forbidden\nkey_level_identifier_settings.support_resistance\n  Extra inputs are not permitted [type=extra_forbidden, input_value={'lookback_periods': [20,...trength_threshold': 0.7}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.8/v/extra_forbidden\nheatmap_generation_settings.resolution\n  Extra inputs are not permitted [type=extra_forbidden, input_value='medium', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.8/v/extra_forbidden\nheatmap_generation_settings.color_scheme\n  Extra inputs are not permitted [type=extra_forbidden, input_value='viridis', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.8/v/extra_forbidden\nheatmap_generation_settings.update_frequency_minutes\n  Extra inputs are not permitted [type=extra_forbidden, input_value=5, input_type=int]\n    For further information visit https://errors.pydantic.dev/2.8/v/extra_forbidden\nheatmap_generation_settings.enhanced_heatmap_params\n  Extra inputs are not permitted [type=extra_forbidden, input_value={'flow_normalization_wind...ime_decay_factor': 0.95}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.8/v/extra_forbidden\nmarket_regime_engine_settings.regime_detection_method\n  Extra inputs are not permitted [type=extra_forbidden, input_value='hybrid', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.8/v/extra_forbidden\nmarket_regime_engine_settings.regime_transition_smoothing\n  Extra inputs are not permitted [type=extra_forbidden, input_value=0.1, input_type=float]\n    For further information visit https://errors.pydantic.dev/2.8/v/extra_forbidden\nmarket_regime_engine_settings.regime_detection\n  Extra inputs are not permitted [type=extra_forbidden, input_value={'method': 'hybrid', 'loo...nsition_smoothing': 0.1}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.8/v/extra_forbidden\nmarket_regime_engine_settings.regime_thresholds\n  Extra inputs are not permitted [type=extra_forbidden, input_value={'bull_market': {'trend_t...threshold_minutes': 30}}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.8/v/extra_forbidden\n0dte_suite_settings\n  Extra inputs are not permitted [type=extra_forbidden, input_value={'base_coefficients': {'g...on': 1.2, 'close': 1.5}}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.8/v/extra_forbidden\nv2_5_enhanced_flow_signals\n  Extra inputs are not permitted [type=extra_forbidden, input_value={'signal_weights': {'vapi...OR_TRANSITIONING': 1.0}}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.8/v/extra_forbidden\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"C:\\Users\\dangt\\OneDrive\\Desktop\\elite_options_system_v2_5(julkess)\\comprehensive_system_test.py\", line 179, in test_configuration_system\n    config_manager = ConfigManagerV2_5()\n                     ^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\dangt\\OneDrive\\Desktop\\elite_options_system_v2_5(julkess)\\utils\\config_manager_v2_5.py\", line 29, in __new__\n    cls._instance._initialize()\n  File \"C:\\Users\\dangt\\OneDrive\\Desktop\\elite_options_system_v2_5(julkess)\\utils\\config_manager_v2_5.py\", line 35, in _initialize\n    self._load_config()\n  File \"C:\\Users\\dangt\\OneDrive\\Desktop\\elite_options_system_v2_5(julkess)\\utils\\config_manager_v2_5.py\", line 110, in _load_config\n    raise RuntimeError(f\"Configuration validation failed: {e}\")\nRuntimeError: Configuration validation failed: 21 validation errors for EOTSConfigV2_5\nadaptive_trade_idea_framework_settings\n  Field required [type=missing, input_value={'system_settings': {'pro...ss_multiplier': 1.5}}}}}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.8/v/missing\nticker_context_analyzer_settings.analysis_depth\n  Extra inputs are not permitted [type=extra_forbidden, input_value='medium', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.8/v/extra_forbidden\nticker_context_analyzer_settings.context_window_days\n  Extra inputs are not permitted [type=extra_forbidden, input_value=30, input_type=int]\n    For further information visit https://errors.pydantic.dev/2.8/v/extra_forbidden\nticker_context_analyzer_settings.correlation_threshold\n  Extra inputs are not permitted [type=extra_forbidden, input_value=0.5, input_type=float]\n    For further information visit https://errors.pydantic.dev/2.8/v/extra_forbidden\nticker_context_analyzer_settings.context_analysis\n  Extra inputs are not permitted [type=extra_forbidden, input_value={'depth': 'medium', 'wind...elation_threshold': 0.5}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.8/v/extra_forbidden\nticker_context_analyzer_settings.sector_analysis\n  Extra inputs are not permitted [type=extra_forbidden, input_value={'enable_sector_correlati...e, 'sector_weight': 0.3}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.8/v/extra_forbidden\nkey_level_identifier_settings.support_resistance_sensitivity\n  Extra inputs are not permitted [type=extra_forbidden, input_value=0.8, input_type=float]\n    For further information visit https://errors.pydantic.dev/2.8/v/extra_forbidden\nkey_level_identifier_settings.level_confirmation_touches\n  Extra inputs are not permitted [type=extra_forbidden, input_value=3, input_type=int]\n    For further information visit https://errors.pydantic.dev/2.8/v/extra_forbidden\nkey_level_identifier_settings.level_tolerance_percentage\n  Extra inputs are not permitted [type=extra_forbidden, input_value=0.5, input_type=float]\n    For further information visit https://errors.pydantic.dev/2.8/v/extra_forbidden\nkey_level_identifier_settings.level_detection\n  Extra inputs are not permitted [type=extra_forbidden, input_value={'sensitivity': 0.8, 'con...erance_percentage': 0.5}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.8/v/extra_forbidden\nkey_level_identifier_settings.support_resistance\n  Extra inputs are not permitted [type=extra_forbidden, input_value={'lookback_periods': [20,...trength_threshold': 0.7}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.8/v/extra_forbidden\nheatmap_generation_settings.resolution\n  Extra inputs are not permitted [type=extra_forbidden, input_value='medium', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.8/v/extra_forbidden\nheatmap_generation_settings.color_scheme\n  Extra inputs are not permitted [type=extra_forbidden, input_value='viridis', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.8/v/extra_forbidden\nheatmap_generation_settings.update_frequency_minutes\n  Extra inputs are not permitted [type=extra_forbidden, input_value=5, input_type=int]\n    For further information visit https://errors.pydantic.dev/2.8/v/extra_forbidden\nheatmap_generation_settings.enhanced_heatmap_params\n  Extra inputs are not permitted [type=extra_forbidden, input_value={'flow_normalization_wind...ime_decay_factor': 0.95}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.8/v/extra_forbidden\nmarket_regime_engine_settings.regime_detection_method\n  Extra inputs are not permitted [type=extra_forbidden, input_value='hybrid', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.8/v/extra_forbidden\nmarket_regime_engine_settings.regime_transition_smoothing\n  Extra inputs are not permitted [type=extra_forbidden, input_value=0.1, input_type=float]\n    For further information visit https://errors.pydantic.dev/2.8/v/extra_forbidden\nmarket_regime_engine_settings.regime_detection\n  Extra inputs are not permitted [type=extra_forbidden, input_value={'method': 'hybrid', 'loo...nsition_smoothing': 0.1}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.8/v/extra_forbidden\nmarket_regime_engine_settings.regime_thresholds\n  Extra inputs are not permitted [type=extra_forbidden, input_value={'bull_market': {'trend_t...threshold_minutes': 30}}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.8/v/extra_forbidden\n0dte_suite_settings\n  Extra inputs are not permitted [type=extra_forbidden, input_value={'base_coefficients': {'g...on': 1.2, 'close': 1.5}}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.8/v/extra_forbidden\nv2_5_enhanced_flow_signals\n  Extra inputs are not permitted [type=extra_forbidden, input_value={'signal_weights': {'vapi...OR_TRANSITIONING': 1.0}}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.8/v/extra_forbidden\n"
+    },
+    {
+      "test": "Data Models Import",
+      "success": true,
+      "message": "All data models imported successfully",
+      "timestamp": "2025-06-11T15:40:05.048927"
+    },
+    {
+      "test": "Data Validation",
+      "success": true,
+      "message": "Mock data structure is valid",
+      "timestamp": "2025-06-11T15:40:05.048927"
+    },
+    {
+      "test": "DataManagerV2_5 Init",
+      "success": false,
+      "message": "DataManagerV2_5 failed",
+      "timestamp": "2025-06-11T15:40:05.049967",
+      "error": "No module named 'data_management.data_manager_v2_5'",
+      "traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\dangt\\OneDrive\\Desktop\\elite_options_system_v2_5(julkess)\\comprehensive_system_test.py\", line 232, in test_core_analytics\n    module = __import__(module_name, fromlist=[class_name])\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nModuleNotFoundError: No module named 'data_management.data_manager_v2_5'\n"
+    },
+    {
+      "test": "DagAlphaCalculatorV2_5 Init",
+      "success": false,
+      "message": "DagAlphaCalculatorV2_5 failed",
+      "timestamp": "2025-06-11T15:40:05.049967",
+      "error": "No module named 'core_analytics_engine.calculators'",
+      "traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\dangt\\OneDrive\\Desktop\\elite_options_system_v2_5(julkess)\\comprehensive_system_test.py\", line 232, in test_core_analytics\n    module = __import__(module_name, fromlist=[class_name])\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nModuleNotFoundError: No module named 'core_analytics_engine.calculators'\n"
+    },
+    {
+      "test": "TdpiBetaCalculatorV2_5 Init",
+      "success": false,
+      "message": "TdpiBetaCalculatorV2_5 failed",
+      "timestamp": "2025-06-11T15:40:05.050967",
+      "error": "No module named 'core_analytics_engine.calculators'",
+      "traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\dangt\\OneDrive\\Desktop\\elite_options_system_v2_5(julkess)\\comprehensive_system_test.py\", line 232, in test_core_analytics\n    module = __import__(module_name, fromlist=[class_name])\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nModuleNotFoundError: No module named 'core_analytics_engine.calculators'\n"
+    },
+    {
+      "test": "VriGammaCalculatorV2_5 Init",
+      "success": false,
+      "message": "VriGammaCalculatorV2_5 failed",
+      "timestamp": "2025-06-11T15:40:05.051472",
+      "error": "No module named 'core_analytics_engine.calculators'",
+      "traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\dangt\\OneDrive\\Desktop\\elite_options_system_v2_5(julkess)\\comprehensive_system_test.py\", line 232, in test_core_analytics\n    module = __import__(module_name, fromlist=[class_name])\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nModuleNotFoundError: No module named 'core_analytics_engine.calculators'\n"
+    },
+    {
+      "test": "Dashboard Main",
+      "success": true,
+      "message": "Dashboard main function imported",
+      "timestamp": "2025-06-11T15:40:07.553529"
+    },
+    {
+      "test": "Dashboard IDs",
+      "success": true,
+      "message": "Dashboard IDs module imported",
+      "timestamp": "2025-06-11T15:40:07.553529"
+    },
+    {
+      "test": "Dashboard System",
+      "success": false,
+      "message": "Dashboard system test failed",
+      "timestamp": "2025-06-11T15:40:07.780413",
+      "error": "cannot import name 'MainDashboardDisplayV2_5' from 'dashboard_application.modes.main_dashboard_display_v2_5' (C:\\Users\\dangt\\OneDrive\\Desktop\\elite_options_system_v2_5(julkess)\\dashboard_application\\modes\\main_dashboard_display_v2_5.py)",
+      "traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\dangt\\OneDrive\\Desktop\\elite_options_system_v2_5(julkess)\\comprehensive_system_test.py\", line 260, in test_dashboard_system\n    from dashboard_application.modes.main_dashboard_display_v2_5 import MainDashboardDisplayV2_5\nImportError: cannot import name 'MainDashboardDisplayV2_5' from 'dashboard_application.modes.main_dashboard_display_v2_5' (C:\\Users\\dangt\\OneDrive\\Desktop\\elite_options_system_v2_5(julkess)\\dashboard_application\\modes\\main_dashboard_display_v2_5.py)\n"
+    },
+    {
+      "test": "DataFrame Conversion",
+      "success": true,
+      "message": "Created DataFrames: 72 options, 1 underlying",
+      "timestamp": "2025-06-11T15:40:07.782422"
+    },
+    {
+      "test": "Data Filtering",
+      "success": true,
+      "message": "Filtered to 18 near-expiry options",
+      "timestamp": "2025-06-11T15:40:07.783772"
+    },
+    {
+      "test": "Basic Calculations",
+      "success": true,
+      "message": "Avg IV: 0.176, Total Volume: 2,160,000",
+      "timestamp": "2025-06-11T15:40:07.783772"
+    }
+  ],
+  "mock_data_summary": {
+    "total_options": 72,
+    "underlying_symbol": "SPY"
+  }
+}
